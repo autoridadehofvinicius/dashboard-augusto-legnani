@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="theme-color" content="#0E0E0D">
+<title>Leads · Oftalmo Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obs:#0E0E0D; --graf:#17171A; --card:#1B1B1E; --card-alta:#201F22;
+  --line:#2A2A2E; --line2:#232327;
+  --marfim:#F1ECE2; --ink2:#B3AFA6; --muted:#7C786F;
+  --plat:#CFC8BA; --plat-2:#A9A294; --plat-soft:rgba(207,200,186,.08);
+  --quente:#CFC8BA; --morno:#8A8479; --frio:#56534D; --wa:#2AA765;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--obs);color:var(--marfim);font:15px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased}
+.faixa{max-width:47rem;margin:0 auto;padding:0 20px}
+
+header.topo{background:linear-gradient(180deg,#17171A 0%,#0E0E0D 100%);
+  border-bottom:1px solid var(--line)}
+header.topo .faixa{padding-top:28px;padding-bottom:24px}
+.marca h1{margin:0;font:300 1.5rem/1.2 var(--serif);letter-spacing:-.01em}
+.marca p{margin:5px 0 0;font-size:.68rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted)}
+.regua{height:1px;margin:20px 0 18px;
+  background:linear-gradient(90deg,var(--plat-2),rgba(169,162,148,.14) 62%,transparent)}
+.olho{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--plat);margin-bottom:7px}
+.secao h2{margin:0;font:300 1.7rem/1.15 var(--serif);letter-spacing:-.01em}
+
+.resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line2);border:1px solid var(--line2);border-radius:3px;
+  overflow:hidden;margin-top:22px}
+.bloco{background:var(--graf);padding:15px 17px}
+.bloco .n{font:300 1.9rem/1 var(--serif);color:var(--marfim);letter-spacing:-.01em}
+.bloco.destaque .n{color:var(--plat)}
+.bloco .r{margin-top:5px;font-size:.64rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+
+.barra{position:sticky;top:0;z-index:9;background:rgba(14,14,13,.94);
+  backdrop-filter:blur(9px);border-bottom:1px solid var(--line2)}
+.barra .faixa{display:flex;gap:8px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.barra button{border:1px solid var(--line);background:transparent;color:var(--ink2);
+  padding:7px 15px;border-radius:2px;font:600 .74rem/1 var(--sans);
+  letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  transition:border-color .15s,color .15s}
+.barra button:hover{border-color:var(--plat-2);color:var(--marfim)}
+.barra button.on{border-color:var(--plat);color:var(--plat);background:var(--plat-soft)}
+
+main{padding:24px 0 56px;display:flex;flex-direction:column;gap:14px}
+.lead{background:var(--card);border:1px solid var(--line2);border-radius:3px;
+  padding:20px 22px;position:relative;overflow:hidden}
+.lead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--frio)}
+.lead.morno::before{background:var(--morno)}
+.lead.quente::before{background:var(--plat)}
+.lead.quente{background:var(--card-alta);border-color:rgba(207,200,186,.22)}
+.lead.atendido{opacity:.42}
+.lead .cab{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.quando{margin:0 0 5px;font:600 .76rem/1.2 var(--sans);letter-spacing:.04em;
+  color:var(--plat);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.atras{font-weight:400;font-size:.71rem;color:var(--muted);letter-spacing:.02em}
+.atras:empty{display:none}
+.tag{font:600 .57rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--plat-2);border:1px solid rgba(169,162,148,.32);border-radius:2px;padding:4px 7px}
+.lead h3{margin:0;font:400 1.2rem/1.25 var(--serif)}
+.selo{flex:none;font:600 .6rem/1 var(--sans);letter-spacing:.15em;
+  text-transform:uppercase;padding:6px 11px;border:1px solid currentColor;
+  border-radius:2px;color:var(--frio)}
+.selo.morno{color:var(--morno)}
+.selo.quente{color:var(--quente);background:var(--plat-soft)}
+
+/* o volume cirurgico e' o dado que decide — ele ganha o bloco de destaque */
+.avolume{margin:17px 0 15px;padding:13px 15px;background:rgba(255,255,255,.022);
+  border-left:2px solid var(--plat-2)}
+.avolume span{display:block;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.avolume b{font:400 1.12rem/1.3 var(--serif);color:var(--plat);word-break:break-word}
+
+dl{margin:0 0 17px;display:grid;gap:9px}
+dl div{display:grid;grid-template-columns:7.4rem 1fr;gap:12px;font-size:.86rem;
+  align-items:baseline}
+dt{color:var(--muted);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+dd{margin:0;color:var(--ink2)}
+.acoes{display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+  padding-top:15px;border-top:1px solid var(--line2)}
+.wa{background:var(--plat);color:#141412;text-decoration:none;padding:10px 18px;
+  border-radius:2px;font:700 .8rem/1 var(--sans);letter-spacing:.04em}
+.wa:hover{background:var(--plat-2)}
+.fone{color:var(--ink2);text-decoration:none;font-size:.84rem;
+  border-bottom:1px solid var(--line);padding-bottom:1px}
+.fone:hover{color:var(--plat)}
+.feito{margin-left:auto;border:1px solid var(--line);background:transparent;
+  color:var(--muted);padding:9px 13px;border-radius:2px;font-size:.73rem;
+  letter-spacing:.06em;cursor:pointer}
+.feito:hover{border-color:var(--plat-2);color:var(--ink2)}
+.email{margin-top:12px;font-size:.77rem;color:var(--muted);word-break:break-all}
+.vazio{background:var(--card);border:1px dashed var(--line);border-radius:3px;
+  padding:58px 24px;text-align:center;color:var(--muted)}
+.vazio b{display:block;font:300 1.2rem/1.4 var(--serif);color:var(--ink2);margin-bottom:9px}
+.vazio span{display:block;font-size:.84rem;max-width:34rem;margin:0 auto;line-height:1.65}
+
+footer{border-top:1px solid var(--line2);background:var(--graf)}
+footer .faixa{padding-top:22px;padding-bottom:26px;display:flex;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.75rem;color:var(--muted)}
+footer b{color:var(--ink2);font-weight:600}
+footer .por{text-align:right}
+
+@media(max-width:560px){
+  .resumo{grid-template-columns:1fr}
+  .secao h2{font-size:1.45rem}
+  dl div{grid-template-columns:1fr;gap:2px}
+  dt{font-size:.62rem}
+  .feito{margin-left:0}
+  footer .faixa{flex-direction:column}
+  footer .por{text-align:left}
+}
+</style>
+</head><body>
+
+<header class="topo"><div class="faixa">
+  <div class="marca">
+    <h1>Oftalmo Advisor</h1>
+    <p>Dr. Augusto Legnani</p>
+  </div>
+  <div class="regua"></div>
+  <div class="secao">
+    <span class="olho">Capta&ccedil;&atilde;o &middot; Meta Ads</span>
+    <h2>Oftalmologistas que responderam</h2>
+  </div>
+  <div class="resumo">
+    <div class="bloco"><div class="n">1</div>
+      <div class="r">Leads recebidos</div></div>
+    <div class="bloco destaque"><div class="n">0</div>
+      <div class="r">De prioridade</div></div>
+    <div class="bloco"><div class="n" id="pendentes">&mdash;</div>
+      <div class="r">Aguardando contato</div></div>
+  </div>
+</div></header>
+
+<nav class="barra"><div class="faixa">
+  <button class="on" data-f="todos">Todos</button>
+  <button data-f="quente">Prioridade</button>
+  <button data-f="pendentes">N&atilde;o atendidos</button>
+</div></nav>
+
+<main class="faixa" id="lista">
+      <article class="lead morno" data-temp="morno" data-id="2097737054441696">
+        <div class="cab">
+          <div>
+            <div class="quando" data-ts="2026-10-04T19:29:03-03:00">04/10/2026 às 19:29<span class="atras"></span><span class="tag">IG</span></div>
+            <h3>Michel Berezovsky</h3>
+          </div>
+          <span class="selo morno">Avaliar</span>
+        </div>
+        <div class="avolume"><span>Cirurgias de catarata por mês</span><b>Até 10 por mês</b></div>
+        <dl><div><dt>CRM</dt><dd>41731  (sem UF)</dd></div><div><dt>Quer desenvolver</dt><dd>Decisões de indicação, principalmente lentes</dd></div><div><dt>Formulário</dt><dd>v3</dd></div></dl>
+        <div class="acoes">
+          <a class="wa" href="https://wa.me/5519998071234?text=Ol%C3%A1%2C%20Dr%28a%29.%20Michel%21%20Aqui%20%C3%A9%20do%20Oftalmo%20Advisor.%20Recebemos%20as%20suas%20respostas%20sobre%20volume%20cir%C3%BArgico%20e%20sobre%20o%20que%20voc%C3%AA%20quer%20desenvolver%20primeiro.%20Posso%20te%20explicar%20como%20funciona%20o%20acompanhamento%3F" target="_blank"
+             rel="noopener">Chamar no WhatsApp</a>
+          <a class="fone" href="tel:+5519998071234">(19) 99807-1234</a>
+          <button class="feito" type="button">Marcar atendido</button>
+        </div>
+        
+      </article></main>
+
+<footer><div class="faixa">
+  <div>Painel interno &middot; &uacute;ltimo lead em <b>04/10/2026 às 19:29</b></div>
+  <div class="por">Desenvolvido por <b>Vinicius A. Souza</b><br>
+    Gest&atilde;o de Tr&aacute;fego e Intelig&ecirc;ncia de Dados</div>
+</div></footer>
+
+<script>
+/* "Atendido" mora no proprio aparelho. NAO e' compartilhado: se a secretaria
+   marcar no celular dela, o Dr. Augusto continua vendo como pendente.
+   Compartilhar exigiria banco de dados, e a pagina e' estatica de proposito. */
+var FEITOS = JSON.parse(localStorage.getItem('adv_leads_feitos') || '[]');
+var filtro = 'todos';
+
+function pinta(){
+  var pend = 0;
+  document.querySelectorAll('.lead').forEach(function(el){
+    var f = FEITOS.indexOf(el.dataset.id) >= 0;
+    el.classList.toggle('atendido', f);
+    if (!f) pend++;
+    var b = el.querySelector('.feito');
+    if (b) b.textContent = f ? 'Atendido' : 'Marcar atendido';
+  });
+  var alvo = document.getElementById('pendentes');
+  if (alvo) alvo.textContent = pend;
+}
+function aplica(){
+  document.querySelectorAll('.lead').forEach(function(el){
+    var ok = filtro === 'todos'
+      || (filtro === 'quente'    && el.dataset.temp === 'quente')
+      || (filtro === 'pendentes' && FEITOS.indexOf(el.dataset.id) < 0);
+    el.style.display = ok ? '' : 'none';
+  });
+}
+document.addEventListener('click', function(e){
+  var b = e.target.closest('.feito'); if(!b) return;
+  var id = b.closest('.lead').dataset.id;
+  var i = FEITOS.indexOf(id);
+  if (i >= 0) FEITOS.splice(i,1); else FEITOS.push(id);
+  localStorage.setItem('adv_leads_feitos', JSON.stringify(FEITOS));
+  pinta(); aplica();
+});
+document.querySelectorAll('.barra button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.barra button').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); filtro = b.dataset.f; aplica();
+  });
+});
+/* "ha 12 min", "ontem" — calculado no navegador, entao nunca fica velho
+   entre uma publicacao e outra */
+function tempoAtras(){
+  var agora = Date.now();
+  document.querySelectorAll('.quando').forEach(function(q){
+    var ts = Date.parse(q.dataset.ts);
+    if (isNaN(ts)) return;
+    var min = Math.floor((agora - ts) / 60000), txt;
+    if (min < 1)        txt = 'agora mesmo';
+    else if (min < 60)  txt = 'há ' + min + ' min';
+    else if (min < 1440){ var h = Math.floor(min/60); txt = 'há ' + h + (h === 1 ? ' hora' : ' horas'); }
+    else { var d = Math.floor(min/1440); txt = d === 1 ? 'ontem' : 'há ' + d + ' dias'; }
+    var s = q.querySelector('.atras');
+    if (s) s.textContent = '· ' + txt;
+  });
+}
+pinta(); aplica(); tempoAtras();
+setInterval(tempoAtras, 60000);
+setTimeout(function(){ location.reload(); }, 120000);
+</script>
+</body></html>
